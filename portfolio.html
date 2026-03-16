@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="fr" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Réalisations - JDA METALS INC | Portfolio Fabrication Métallurgique</title>
+    <meta name="description" content="Découvrez nos réalisations en fabrication métallurgique : charpentes commerciales, escaliers design, structures industrielles. 30 ans d'expertise au Québec.">
+    <meta name="keywords" content="portfolio métallurgie, réalisations acier structural, projets soudure, escaliers métalliques Québec">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio JDA METALS INC | Réalisations Métallurgiques">
+    <meta property="og:description" content="Découvrez nos réalisations en fabrication métallurgique au Québec.">
+    <meta property="og:image" content="https://jdametals.com/portfolio-og.jpg">
+    <meta property="og:url" content="https://jdametals.com/portfolio">
+    <meta property="og:type" content="website">
+    
+    <link rel="canonical" href="https://jdametals.com/portfolio">
+    <link rel="alternate" hreflang="fr-CA" href="https://jdametals.com/portfolio">
+    <link rel="alternate" hreflang="en-CA" href="https://jdametals.com/en/portfolio">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=DM+Sans:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'warm-white': '#F5F0EB',
+              'warm-gray': '#E8E0D8',
+              'forge-orange': '#C45A28',
+              'dark-charcoal': '#2C2C2C',
+              'warm-bronze': '#8B7355',
+              'text-primary': '#1A1A1A',
+              'text-secondary': '#666666',
+              'border-muted': '#CCBFB0'
+            },
+            fontFamily: {
+              'grotesk': ['Space Grotesk', 'sans-serif'],
+              'sans': ['DM Sans', 'sans-serif'],
+              'mono': ['Space Mono', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Critical CSS -->
+    <style>
+      .nav-blur {
+        backdrop-filter: blur(10px);
+        background: rgba(245, 240, 235, 0.95);
+      }
+      
+      .cursor--view::after {
+        content: 'VOIR';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 10px;
+        font-weight: bold;
+        color: white;
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      @keyframes grain {
+        0%, 100% { transform: translate(0, 0); }
+        10% { transform: translate(-5%, -10%); }
+        30% { transform: translate(3%, -15%); }
+        50% { transform: translate(12%, 9%); }
+        70% { transform: translate(-9%, 4%); }
+        90% { transform: translate(-1%, -7%); }
+      }
+      
+      .magnetic {
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      
+      .filter-tab {
+        position: relative;
+        overflow: hidden;
+      }
+      .filter-tab::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #C45A28;
+        transition: width 0.3s ease;
+      }
+      .filter-tab.active::after {
+        width: 100%;
+      }
+      
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover {
+        transform: scale(1.02);
+      }
+      .project-card img {
+        transition: transform 0.5s ease;
+      }
+      .project-card:hover img {
+        transform: scale(1.05);
+      }
+      .project-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: flex-end;
+        padding: 1.5rem;
+      }
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+      
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.9);
+        z-index: 9999;
+        animation: fadeIn 0.3s ease;
+      }
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .modal-content {
+        max-width: 90vw;
+        max-height: 90vh;
+        animation: slideUp 0.4s ease;
+      }
+      @keyframes slideUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        grid-auto-rows: 250px;
+      }
+      .bento-large {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .bento-medium {
+        grid-row: span 2;
+      }
+      @media (max-width: 768px) {
+        .bento-large, .bento-medium {
+          grid-column: span 1;
+          grid-row: span 1;
+        }
+      }
+    </style>
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "Portfolio JDA METALS INC",
+      "description": "Réalisations en fabrication métallurgique au Québec",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "JDA METALS INC"
+      }
+    }
+    </script>
+</head>
+
+<body class="bg-warm-white text-text-primary font-sans grain">
+    <!-- Custom Cursor -->
+    
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-500 py-4 px-6 lg:px-12">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <a href="/" class="flex items-center">
+                <img id="nav-logo" src="jda_logo_transparent.png" alt="JDA METALS" class="h-20 w-auto transition-all duration-300">
+            </a>
+            
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="/" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="ACCUEIL" data-en="HOME">ACCUEIL</a>
+                <a href="services.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="SERVICES" data-en="SERVICES">SERVICES</a>
+                <a href="portfolio.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300 border-b-2 border-forge-orange" data-fr="RÉALISATIONS" data-en="PORTFOLIO">RÉALISATIONS</a>
+                <a href="about.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="À PROPOS" data-en="ABOUT">À PROPOS</a>
+                <a href="secteurs.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="SECTEURS" data-en="MARKETS">SECTEURS</a>
+                <a href="contact.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="CONTACT" data-en="CONTACT">CONTACT</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-6">
+                <div class="flex items-center space-x-2 text-sm">
+                    <span class="font-medium">FR</span>
+                    <span class="text-text-secondary">|</span>
+                    <a href="/en/portfolio" class="text-text-secondary hover:text-forge-orange transition-colors">EN</a>
+                </div>
+                <a href="tel:(450) 226-3838" class="font-mono text-sm font-medium hover:text-forge-orange transition-colors">(450) 226-3838</a>
+                <a href="devis.html" class="magnetic bg-forge-orange text-white px-6 py-2 rounded text-sm font-medium hover:bg-opacity-90 transition-all duration-300" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+            </div>
+            
+            <button id="mobile-menu-btn" class="lg:hidden flex flex-col space-y-1 p-2">
+                <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="fixed inset-0 bg-warm-white z-40 transform translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col justify-center items-center h-full space-y-8">
+            <a href="/" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="ACCUEIL" data-en="HOME">ACCUEIL</a>
+            <a href="services.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="SERVICES" data-en="SERVICES">SERVICES</a>
+            <a href="portfolio.html" class="text-2xl font-grotesk font-bold text-forge-orange" data-fr="RÉALISATIONS" data-en="PORTFOLIO">RÉALISATIONS</a>
+            <a href="about.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="À PROPOS" data-en="ABOUT">À PROPOS</a>
+            <a href="secteurs.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="SECTEURS" data-en="MARKETS">SECTEURS</a>
+            <a href="contact.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="CONTACT" data-en="CONTACT">CONTACT</a>
+            <div class="pt-8 space-y-4 text-center">
+                <a href="tel:(450) 226-3838" class="block font-mono text-lg font-medium">(450) 226-3838</a>
+                <a href="devis.html" class="block bg-forge-orange text-white px-8 py-3 rounded font-medium" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page Header -->
+    <section class="pt-32 pb-8 lg:pt-40 lg:pb-12">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            <div class="text-center">
+                <p class="uppercase text-sm tracking-widest text-forge-orange font-medium mb-4" data-fr="NOS RÉALISATIONS" data-en="OUR PORTFOLIO">NOS RÉALISATIONS</p>
+                <h1 class="font-grotesk font-bold text-4xl lg:text-6xl xl:text-7xl mb-6 leading-tight" data-fr="30 Ans d'Excellence<br>en Métallurgie" data-en="30 Years of Excellence<br>in Metalworking">
+                    30 Ans d'Excellence<br>en Métallurgie
+                </h1>
+                <p class="text-lg lg:text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed" data-fr="Découvrez notre portfolio de réalisations exceptionnelles. Chaque projet reflète notre engagement envers la qualité, l'innovation et la satisfaction client." data-en="Discover our portfolio of exceptional projects. Each realization reflects our commitment to quality, innovation and client satisfaction.">
+                    Découvrez notre portfolio de réalisations exceptionnelles. Chaque projet reflète notre engagement 
+                    envers la qualité, l'innovation et la satisfaction client.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Filter Tabs -->
+    <section class="pb-12">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-wrap justify-center gap-8">
+                <button class="filter-tab active uppercase text-sm tracking-wider font-medium py-2 px-4 hover:text-forge-orange transition-colors" data-filter="all" data-fr="Tout" data-en="All">
+                    Tout
+                </button>
+                <button class="filter-tab uppercase text-sm tracking-wider font-medium py-2 px-4 hover:text-forge-orange transition-colors" data-filter="commercial" data-fr="Commercial" data-en="Commercial">
+                    Commercial
+                </button>
+                <button class="filter-tab uppercase text-sm tracking-wider font-medium py-2 px-4 hover:text-forge-orange transition-colors" data-filter="residential" data-fr="Résidentiel" data-en="Residential">
+                    Résidentiel
+                </button>
+                <button class="filter-tab uppercase text-sm tracking-wider font-medium py-2 px-4 hover:text-forge-orange transition-colors" data-filter="industrial" data-fr="Industriel" data-en="Industrial">
+                    Industriel
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Grid -->
+    <section class="pb-16 lg:pb-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="bento-grid" id="portfolio-grid">
+                <!-- Project 1 - Large -->
+                <div class="project-card bento-large rounded-lg overflow-hidden shadow-lg" data-category="commercial" data-project="structure-ste-marguerite">
+                    <img src="photo-1108101.jpg" alt="Structure Commerciale Ste-Marguerite" class="w-full h-full object-cover" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="text-white">
+                            <h3 class="font-grotesk font-bold text-xl lg:text-2xl mb-2" data-fr="Structure Commerciale Ste-Marguerite" data-en="Commercial Structure Ste-Marguerite">Structure Commerciale Ste-Marguerite</h3>
+                            <p class="text-sm opacity-90 mb-3" data-fr="Charpente métallique complexe de 2,500 pi² pour bâtiment commercial moderne" data-en="Complex 2,500 sq ft steel frame for modern commercial building">Charpente métallique complexe de 2,500 pi² pour bâtiment commercial moderne</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-forge-orange px-2 py-1 rounded text-xs" data-fr="Commercial" data-en="Commercial">Commercial</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-xs">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - Medium -->
+                <div class="project-card bento-medium rounded-lg overflow-hidden shadow-lg" data-category="industrial" data-project="usine-metallurgie">
+                    <img src="photo-2760241.jpg" alt="Usine de Métallurgie" class="w-full h-full object-cover" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="text-white">
+                            <h3 class="font-grotesk font-bold text-lg mb-2" data-fr="Expansion Usine Métallurgique" data-en="Metallurgical Plant Expansion">Expansion Usine Métallurgique</h3>
+                            <p class="text-sm opacity-90 mb-3" data-fr="Structure industrielle haute résistance - 4,000 pi²" data-en="High-strength industrial structure - 4,000 sq ft">Structure industrielle haute résistance - 4,000 pi²</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-forge-orange px-2 py-1 rounded text-xs" data-fr="Industriel" data-en="Industrial">Industriel</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-xs">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - Medium -->
+                <div class="project-card bento-medium rounded-lg overflow-hidden shadow-lg" data-category="residential" data-project="escalier-design">
+                    <img src="photo-4491881.jpg" alt="Escalier Design Résidentiel" class="w-full h-full object-cover" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="text-white">
+                            <h3 class="font-grotesk font-bold text-lg mb-2" data-fr="Escalier Design Résidentiel" data-en="Residential Design Staircase">Escalier Design Résidentiel</h3>
+                            <p class="text-sm opacity-90 mb-3" data-fr="Escalier hélicoïdal en acier et verre - Westmount" data-en="Helical steel and glass staircase - Westmount">Escalier hélicoïdal en acier et verre - Westmount</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-forge-orange px-2 py-1 rounded text-xs" data-fr="Résidentiel" data-en="Residential">Résidentiel</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-xs">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 - Regular -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg" data-category="commercial" data-project="mezzanine-entrepot">
+                    <img src="photo-2219024.jpg" alt="Mezzanine d'Entrepôt" class="w-full h-full object-cover" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="text-white">
+                            <h3 class="font-grotesk font-bold text-lg mb-2" data-fr="Mezzanine d'Entrepôt" data-en="Warehouse Mezzanine">Mezzanine d'Entrepôt</h3>
+                            <p class="text-sm opacity-90 mb-3" data-fr="Structure de stockage - 1,200 pi²" data-en="Storage structure - 1,200 sq ft">Structure de stockage - 1,200 pi²</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-forge-orange px-2 py-1 rounded text-xs" data-fr="Commercial" data-en="Commercial">Commercial</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-xs">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 - Regular -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg" data-category="industrial" data-project="charpente-industrielle">
+                    <img src="photo-1216589.jpg" alt="Charpente Industrielle" class="w-full h-full object-cover" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="text-white">
+                            <h3 class="font-grotesk font-bold text-lg mb-2" data-fr="Charpente Industrielle" data-en="Industrial Framework">Charpente Industrielle</h3>
+                            <p class="text-sm opacity-90 mb-3" data-fr="Bâtiment manufacturier - Terrebonne" data-en="Manufacturing building - Terrebonne">Bâtiment manufacturier - Terrebonne</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-forge-orange px-2 py-1 rounded text-xs" data-fr="Industriel" data-en="Industrial">Industriel</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-xs">2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 - Regular -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg" data-category="residential" data-project="garde-corps-moderne">
+                    <img src="photo-1474993.jpg" alt="Garde-Corps Moderne" class="w-full h-full object-cover" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="text-white">
+                            <h3 class="font-grotesk font-bold text-lg mb-2" data-fr="Garde-Corps Moderne" data-en="Modern Railings">Garde-Corps Moderne</h3>
+                            <p class="text-sm opacity-90 mb-3" data-fr="Design minimaliste - Résidence Laurentides" data-en="Minimalist design - Laurentides residence">Design minimaliste - Résidence Laurentides</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-forge-orange px-2 py-1 rounded text-xs" data-fr="Résidentiel" data-en="Residential">Résidentiel</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-xs">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 7 - Large -->
+                <div class="project-card bento-large rounded-lg overflow-hidden shadow-lg" data-category="industrial" data-project="complexe-industriel">
+                    <img src="photo-159358.jpg" alt="Complexe Industriel" class="w-full h-full object-cover" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="text-white">
+                            <h3 class="font-grotesk font-bold text-xl lg:text-2xl mb-2" data-fr="Complexe Industriel Laval" data-en="Laval Industrial Complex">Complexe Industriel Laval</h3>
+                            <p class="text-sm opacity-90 mb-3" data-fr="Structures métalliques multiples pour centre de distribution - 15,000 pi²" data-en="Multiple steel structures for distribution center - 15,000 sq ft">Structures métalliques multiples pour centre de distribution - 15,000 pi²</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-forge-orange px-2 py-1 rounded text-xs" data-fr="Industriel" data-en="Industrial">Industriel</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-xs">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 8 - Regular -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg" data-category="commercial" data-project="facade-acier">
+                    <img src="photo-2760243.jpg" alt="Façade Acier Architectural" class="w-full h-full object-cover" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="text-white">
+                            <h3 class="font-grotesk font-bold text-lg mb-2" data-fr="Façade Acier Architectural" data-en="Architectural Steel Facade">Façade Acier Architectural</h3>
+                            <p class="text-sm opacity-90 mb-3" data-fr="Revêtement métallique design - Montréal" data-en="Designer metal cladding - Montreal">Revêtement métallique design - Montréal</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-forge-orange px-2 py-1 rounded text-xs" data-fr="Commercial" data-en="Commercial">Commercial</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-xs">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 9 - Regular -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg" data-category="residential" data-project="balcon-suspendu">
+                    <img src="photo-3637837.jpg" alt="Balcon Suspendu" class="w-full h-full object-cover" loading="lazy">
+                    <div class="project-overlay">
+                        <div class="text-white">
+                            <h3 class="font-grotesk font-bold text-lg mb-2" data-fr="Balcon Suspendu" data-en="Suspended Balcony">Balcon Suspendu</h3>
+                            <p class="text-sm opacity-90 mb-3" data-fr="Structure cantilever - Plateau Mont-Royal" data-en="Cantilever structure - Plateau Mont-Royal">Structure cantilever - Plateau Mont-Royal</p>
+                            <div class="flex space-x-2">
+                                <span class="bg-forge-orange px-2 py-1 rounded text-xs" data-fr="Résidentiel" data-en="Residential">Résidentiel</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-xs">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content bg-white rounded-lg max-w-4xl w-full mx-4">
+            <div class="relative">
+                <!-- Close Button -->
+                <button id="close-modal" class="absolute top-4 right-4 z-10 w-8 h-8 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                
+                <!-- Modal Content -->
+                <div id="modal-content">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <section class="bg-dark-charcoal text-white py-16 lg:py-20">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="font-grotesk font-bold text-3xl lg:text-4xl mb-6" data-fr="Votre Projet Sera le Prochain?" data-en="Will Your Project Be the Next One?">Votre Projet Sera le Prochain?</h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto" data-fr="Chaque réalisation commence par une vision. Partagez-nous la vôtre et laissez notre expertise transformer vos idées en structures métalliques exceptionnelles." data-en="Every project begins with a vision. Share yours with us and let our expertise transform your ideas into exceptional metal structures.">
+                Chaque réalisation commence par une vision. Partagez-nous la vôtre et laissez notre expertise 
+                transformer vos idées en structures métalliques exceptionnelles.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="devis.html" class="magnetic bg-forge-orange text-white px-8 py-4 rounded-lg font-medium hover:bg-opacity-90 transition-all duration-300" data-fr="Demander une soumission" data-en="Request a quote">
+                    Demander une soumission
+                </a>
+                <a href="contact.html" class="magnetic border border-gray-400 text-gray-300 hover:text-white hover:border-white px-8 py-4 rounded-lg font-medium transition-all duration-300" data-fr="Discuter de mon projet" data-en="Discuss my project">
+                    Discuter de mon projet
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark-charcoal text-white border-t-2 border-forge-orange">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="lg:col-span-1">
+                    <img src="jda_logo_transparent.png" alt="JDA METALS" class="h-16 w-auto mb-4 filter invert">
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4" data-fr="Expert en fabrication métallurgique au Québec depuis 30 ans. Votre partenaire de confiance pour tous vos projets d'acier structural." data-en="Metal fabrication expert in Quebec for 30 years. Your trusted partner for all your structural steel projects.">
+                        Expert en fabrication métallurgique au Québec depuis 30 ans. Votre partenaire de confiance pour tous vos projets d'acier structural.
+                    </p>
+                    <p class="text-xs text-gray-400" data-fr="Licence RBQ: 5678-1234-01" data-en="RBQ License: 5678-1234-01">
+                        Licence RBQ: 5678-1234-01
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-grotesk font-bold text-lg mb-4" data-fr="Services" data-en="Services">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Acier Structural" data-en="Structural Steel">Acier Structural</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Soudure Spécialisée" data-en="Specialized Welding">Soudure Spécialisée</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Escaliers & Garde-Corps" data-en="Stairs & Railings">Escaliers & Garde-Corps</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Installation" data-en="Installation">Installation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-grotesk font-bold text-lg mb-4" data-fr="Navigation" data-en="Navigation">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Services" data-en="Services">Services</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="À Propos" data-en="About">À Propos</a></li>
+                        <li><a href="secteurs.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Secteurs" data-en="Markets">Secteurs</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Contact" data-en="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-grotesk font-bold text-lg mb-4" data-fr="Contact" data-en="Contact">Contact</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-4 h-4 mt-0.5 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <div>
+                                <p class="text-gray-300">91 Rue Du Joli-Bucheron</p>
+                                <p class="text-gray-300">Ste-Marguerite, QC J0K 2X0</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-4 h-4 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <a href="tel:(450) 226-3838" class="text-gray-300 hover:text-forge-orange transition-colors font-mono">(450) 226-3838</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-4 h-4 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <a href="mailto:info@jdametals.com" class="text-gray-300 hover:text-forge-orange transition-colors">info@jdametals.com</a>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-xs text-gray-400 mb-2" data-fr="Heures d'ouverture:" data-en="Opening hours:">Heures d'ouverture:</p>
+                            <p class="text-sm text-gray-300" data-fr="Lun-Ven: 7h00 - 17h00" data-en="Mon-Fri: 7:00 AM - 5:00 PM">Lun-Ven: 7h00 - 17h00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-sm text-gray-400 mb-4 md:mb-0" data-fr="© 2026 JDA METALS INC. Tous droits réservés." data-en="© 2026 JDA METALS INC. All rights reserved.">
+                        © 2026 JDA METALS INC. Tous droits réservés.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="/confidentialite" class="text-gray-400 hover:text-forge-orange transition-colors" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+                        <a href="/conditions" class="text-gray-400 hover:text-forge-orange transition-colors" data-fr="Conditions" data-en="Terms">Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts (Deferred) -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+    
+    <script>
+        // Project data
+        const projectData = {
+            'structure-ste-marguerite': {
+                title: 'Structure Commerciale Ste-Marguerite',
+                category: 'Commercial',
+                year: '2023',
+                surface: '2,500 pi²',
+                description: 'Conception et installation d\'une charpente métallique complexe pour un bâtiment commercial moderne. Le projet incluait des poutres structurales de grande portée et des assemblages spécialisés.',
+                specs: ['Acier A992 Grade 50', 'Soudage certifié CWB', 'Capacité: 150 kN/m²', 'Durée: 8 semaines'],
+                image: 'photo-1108101.jpg'
+            },
+            'usine-metallurgie': {
+                title: 'Expansion Usine Métallurgique',
+                category: 'Industriel',
+                year: '2023', 
+                surface: '4,000 pi²',
+                description: 'Extension d\'une usine existante avec structures haute résistance pour équipements lourds. Coordination avec les opérations en cours.',
+                specs: ['Structure anti-vibration', 'Fondations renforcées', 'Résistance sismique', 'Durée: 12 semaines'],
+                image: 'photo-2760241.jpg'
+            },
+            'escalier-design': {
+                title: 'Escalier Design Résidentiel',
+                category: 'Résidentiel',
+                year: '2024',
+                surface: 'Custom',
+                description: 'Escalier hélicoïdal sur mesure en acier et verre pour résidence haut de gamme. Design architectural unique avec garde-corps intégré.',
+                specs: ['Acier inoxydable 316', 'Finition brossée', 'Garde-corps verre trempé', 'Durée: 4 semaines'],
+                image: 'photo-4491881.jpg'
+            }
+        };
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initializeAnimations, 100);
+        });
+        
+        function initializeAnimations() {
+            if (typeof gsap === 'undefined') {
+                setTimeout(initializeAnimations, 100);
+                return;
+            }
+            
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Native smooth scrolling is handled by CSS scroll-behavior: smooth
+            
+            // Navigation blur
+            ScrollTrigger.create({
+                start: "top -80",
+                end: 99999,
+                toggleClass: {className: "nav-blur", targets: "#main-nav"}
+            });
+            
+            // Logo shrink
+            gsap.to('#nav-logo', {
+                height: 48,
+                ease: "none",
+                scrollTrigger: { trigger: "body", start: "top top", end: "200px top", scrub: true }
+            });
+            
+            // Portfolio grid animation
+            gsap.fromTo('.project-card', 
+                { opacity: 0, y: 30 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 0.6,
+                    stagger: 0.1,
+                    scrollTrigger: {
+                        trigger: '#portfolio-grid',
+                        start: 'top 80%'
+                    }
+                }
+            );
+            
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('translate-x-full');
+            });
+            
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+            
+            // Filter functionality
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const filter = tab.dataset.filter;
+                    
+                    // Update active tab
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            gsap.to(card, { opacity: 1, scale: 1, duration: 0.3 });
+                        } else {
+                            gsap.to(card, { opacity: 0.3, scale: 0.95, duration: 0.3 });
+                        }
+                    });
+                });
+            });
+            
+
+            
+            // Modal functionality
+            const modal = document.getElementById('project-modal');
+            const modalContent = document.getElementById('modal-content');
+            const closeModal = document.getElementById('close-modal');
+            
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const projectId = card.dataset.project;
+                    const project = projectData[projectId];
+                    
+                    if (project) {
+                        modalContent.innerHTML = `
+                            <div class="relative">
+                                <img src="${project.image}" alt="${project.title}" class="w-full h-64 lg:h-96 object-cover rounded-t-lg">
+                            </div>
+                            <div class="p-6 lg:p-8">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-forge-orange text-white px-3 py-1 rounded text-sm">${project.category}</span>
+                                    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm">${project.year}</span>
+                                    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm">${project.surface}</span>
+                                </div>
+                                <h2 class="font-grotesk font-bold text-2xl lg:text-3xl mb-4">${project.title}</h2>
+                                <p class="text-text-secondary mb-6 leading-relaxed">${project.description}</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h3 class="font-grotesk font-bold text-lg mb-3">Spécifications Techniques</h3>
+                                        <ul class="space-y-2">
+                                            ${project.specs.map(spec => `
+                                                <li class="flex items-center space-x-2">
+                                                    <svg class="w-4 h-4 text-forge-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                                    </svg>
+                                                    <span class="text-sm">${spec}</span>
+                                                </li>
+                                            `).join('')}
+                                        </ul>
+                                    </div>
+                                    <div class="font-mono text-sm space-y-2 text-text-secondary">
+                                        <div><span class="text-text-primary">Client:</span> Confidentiel</div>
+                                        <div><span class="text-text-primary">Lieu:</span> Québec</div>
+                                        <div><span class="text-text-primary">Statut:</span> Complété</div>
+                                        <div><span class="text-text-primary">Année:</span> ${project.year}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-8 pt-6 border-t border-gray-200">
+                                    <a href="devis.html" class="magnetic inline-flex items-center bg-forge-orange text-white px-6 py-3 rounded hover:bg-opacity-90 transition-all duration-300">
+                                        Projet similaire? Demandez un devis
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            closeModal.addEventListener('click', closeModalFunc);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModalFunc();
+            });
+            
+            function closeModalFunc() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModalFunc();
+            });
+            
+            // Magnetic effect
+            document.querySelectorAll('.magnetic').forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = '';
+                });
+            });
+        }
+    
+        // FR/EN Translation System
+        let currentLang = localStorage.getItem('jda-lang') || 'fr';
+        function applyLanguage() {
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.textContent = currentLang === 'fr' ? el.dataset.fr : el.dataset.en;
+            });
+            document.querySelectorAll('[data-placeholder-fr][data-placeholder-en]').forEach(el => {
+                el.placeholder = currentLang === 'fr' ? el.dataset.placeholderFr : el.dataset.placeholderEn;
+            });
+            document.documentElement.lang = currentLang;
+            const btn = document.getElementById('lang-toggle-btn');
+            if (btn) btn.textContent = currentLang === 'fr' ? 'EN' : 'FR';
+            const frLabel = document.getElementById('lang-fr-label');
+            if (frLabel) frLabel.textContent = currentLang === 'fr' ? 'FR' : 'EN';
+        }
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('jda-lang', currentLang);
+            applyLanguage();
+        }
+        document.addEventListener('DOMContentLoaded', applyLanguage);
+
+</script>
+</body>
+</html>

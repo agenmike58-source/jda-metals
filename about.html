@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fr" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - JDA METALS INC | 30 Ans d'Expertise Métallurgique au Québec</title>
+    <meta name="description" content="Fondée en 1994, JDA METALS INC est votre expert en fabrication métallurgique au Québec. 30 ans d'expérience, équipe qualifiée, équipements modernes.">
+    <meta name="keywords" content="JDA METALS histoire, fabrication métallique Québec, entreprise soudure, équipe métallurgique, atelier acier">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="À Propos JDA METALS INC | 30 Ans d'Expertise Métallurgique">
+    <meta property="og:description" content="L'histoire et l'expertise de JDA METALS INC depuis 1994.">
+    <meta property="og:image" content="https://jdametals.com/about-og.jpg">
+    <meta property="og:url" content="https://jdametals.com/about">
+    <meta property="og:type" content="website">
+    
+    <link rel="canonical" href="https://jdametals.com/about">
+    <link rel="alternate" hreflang="fr-CA" href="https://jdametals.com/about">
+    <link rel="alternate" hreflang="en-CA" href="https://jdametals.com/en/about">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=DM+Sans:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'warm-white': '#F5F0EB',
+              'warm-gray': '#E8E0D8',
+              'forge-orange': '#C45A28',
+              'dark-charcoal': '#2C2C2C',
+              'warm-bronze': '#8B7355',
+              'text-primary': '#1A1A1A',
+              'text-secondary': '#666666',
+              'border-muted': '#CCBFB0'
+            },
+            fontFamily: {
+              'grotesk': ['Space Grotesk', 'sans-serif'],
+              'sans': ['DM Sans', 'sans-serif'],
+              'mono': ['Space Mono', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Critical CSS -->
+    <style>
+      .nav-blur {
+        backdrop-filter: blur(10px);
+        background: rgba(245, 240, 235, 0.95);
+      }
+      
+      @keyframes grain {
+        0%, 100% { transform: translate(0, 0); }
+        10% { transform: translate(-5%, -10%); }
+        30% { transform: translate(3%, -15%); }
+        50% { transform: translate(12%, 9%); }
+        70% { transform: translate(-9%, 4%); }
+        90% { transform: translate(-1%, -7%); }
+      }
+      
+      .magnetic {
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      
+      .timeline {
+        position: relative;
+      }
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #CCBFB0;
+        transform: translateX(-50%);
+      }
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 2px;
+        background: #C45A28;
+        transform: translateX(-50%);
+        height: 0;
+        transition: height 2s ease-out;
+      }
+      
+      .timeline-item {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      
+      .value-card {
+        background: #E8E0D8;
+        transition: all 0.3s ease;
+        border-top: 3px solid transparent;
+      }
+      .value-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        border-top-color: #C45A28;
+      }
+      
+      .equipment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      
+      .split-chars {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+    </style>
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "JDA METALS INC",
+      "foundingDate": "1994",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "91 Rue Du Joli-Bucheron",
+        "addressLocality": "Ste-Marguerite",
+        "addressRegion": "QC",
+        "postalCode": "J0K 2X0",
+        "addressCountry": "CA"
+      },
+      "telephone": "(450) 226-3838",
+      "email": "info@jdametals.com",
+      "url": "https://jdametals.com",
+      "description": "Expert en fabrication métallurgique au Québec depuis 1994",
+      "numberOfEmployees": "15-20",
+      "industry": "Fabrication métallurgique"
+    }
+    </script>
+</head>
+
+<body class="bg-warm-white text-text-primary font-sans grain">
+    <!-- Custom Cursor -->
+    
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-500 py-4 px-6 lg:px-12">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <a href="/" class="flex items-center">
+                <img id="nav-logo" src="jda_logo_transparent.png" alt="JDA METALS" class="h-20 w-auto transition-all duration-300">
+            </a>
+            
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="/" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="ACCUEIL" data-en="HOME">ACCUEIL</a>
+                <a href="services.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="SERVICES" data-en="SERVICES">SERVICES</a>
+                <a href="portfolio.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="RÉALISATIONS" data-en="PORTFOLIO">RÉALISATIONS</a>
+                <a href="about.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300 border-b-2 border-forge-orange" data-fr="À PROPOS" data-en="ABOUT">À PROPOS</a>
+                <a href="secteurs.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="SECTEURS" data-en="MARKETS">SECTEURS</a>
+                <a href="contact.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="CONTACT" data-en="CONTACT">CONTACT</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-6">
+                <div class="flex items-center space-x-2 text-sm">
+                    <span class="font-medium">FR</span>
+                    <span class="text-text-secondary">|</span>
+                    <a href="/en/about" class="text-text-secondary hover:text-forge-orange transition-colors">EN</a>
+                </div>
+                <a href="tel:(450) 226-3838" class="font-mono text-sm font-medium hover:text-forge-orange transition-colors">(450) 226-3838</a>
+                <a href="devis.html" class="magnetic bg-forge-orange text-white px-6 py-2 rounded text-sm font-medium hover:bg-opacity-90 transition-all duration-300" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+            </div>
+            
+            <button id="mobile-menu-btn" class="lg:hidden flex flex-col space-y-1 p-2">
+                <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="fixed inset-0 bg-warm-white z-40 transform translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col justify-center items-center h-full space-y-8">
+            <a href="/" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="ACCUEIL" data-en="HOME">ACCUEIL</a>
+            <a href="services.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="SERVICES" data-en="SERVICES">SERVICES</a>
+            <a href="portfolio.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="RÉALISATIONS" data-en="PORTFOLIO">RÉALISATIONS</a>
+            <a href="about.html" class="text-2xl font-grotesk font-bold text-forge-orange" data-fr="À PROPOS" data-en="ABOUT">À PROPOS</a>
+            <a href="secteurs.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="SECTEURS" data-en="MARKETS">SECTEURS</a>
+            <a href="contact.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="CONTACT" data-en="CONTACT">CONTACT</a>
+            <div class="pt-8 space-y-4 text-center">
+                <a href="tel:(450) 226-3838" class="block font-mono text-lg font-medium">(450) 226-3838</a>
+                <a href="devis.html" class="block bg-forge-orange text-white px-8 py-3 rounded font-medium" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hero Quote -->
+    <section class="pt-32 pb-16 lg:pt-40 lg:pb-24">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+            <blockquote class="font-grotesk font-bold text-3xl lg:text-5xl xl:text-6xl italic leading-tight text-text-primary mb-8" data-fr="&quot;L'acier, c'est notre métier depuis 30 ans&quot;" data-en="&quot;Steel has been our craft for 30 years&quot;">
+                "L'acier, c'est notre métier depuis 30 ans"
+            </blockquote>
+            <p class="text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto" data-fr="— Jean-Denis Aubé, Fondateur et Président" data-en="— Jean-Denis Aubé, Founder and President">
+                — Jean-Denis Aubé, Fondateur et Président
+            </p>
+        </div>
+    </section>
+    
+    <!-- Company Story -->
+    <section class="py-16 lg:py-24 bg-warm-gray">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12">
+            <div class="space-y-8 lg:space-y-12">
+                <div class="story-paragraph opacity-0 transform translate-y-6">
+                    <p class="text-lg lg:text-xl leading-relaxed text-text-secondary" data-fr="Fondée en 1994 par Jean-Denis Aubé, JDA METALS INC est née d'une passion pour l'artisanat métallurgique et d'une vision claire : offrir au Québec des services de fabrication d'acier structural de qualité supérieure, alliant savoir-faire traditionnel et technologies modernes." data-en="Founded in 1994 by Jean-Denis Aubé, JDA METALS INC was born from a passion for metallurgical craftsmanship and a clear vision: to offer Quebec superior quality structural steel fabrication services, combining traditional know-how and modern technologies.">
+                        <strong class="text-text-primary">Fondée en 1994</strong> par Jean-Denis Aubé, JDA METALS INC est née d'une passion 
+                        pour l'artisanat métallurgique et d'une vision claire : offrir au Québec des services de fabrication 
+                        d'acier structural de qualité supérieure, alliant savoir-faire traditionnel et technologies modernes.
+                    </p>
+                </div>
+                
+                <div class="story-paragraph opacity-0 transform translate-y-6">
+                    <p class="text-lg lg:text-xl leading-relaxed text-text-secondary" data-fr="Dès les premiers jours, notre approche était différente. Plutôt que de simplement exécuter des commandes, nous avons choisi de devenir de véritables partenaires pour nos clients, les accompagnant de la conception initiale jusqu'à l'installation finale." data-en="From the early days, our approach was different. Rather than simply executing orders, we chose to become true partners for our clients, supporting them from initial design through to final installation.">
+                        Dès les premiers jours, notre approche était différente. <strong class="text-text-primary">Plutôt que de 
+                        simplement exécuter des commandes</strong>, nous avons choisi de devenir de véritables partenaires 
+                        pour nos clients, les accompagnant de la conception initiale jusqu'à l'installation finale.
+                    </p>
+                </div>
+                
+                <div class="story-paragraph opacity-0 transform translate-y-6">
+                    <p class="text-lg lg:text-xl leading-relaxed text-text-secondary" data-fr="Aujourd'hui, plus de 500 projets plus tard, nous continuons d'innover tout en restant fidèles à nos valeurs fondamentales : excellence technique, respect des délais et engagement envers la satisfaction client. Notre équipe de 18 artisans qualifiés perpétue cette tradition d'excellence qui fait notre réputation à travers le Québec." data-en="Today, over 500 projects later, we continue to innovate while staying true to our fundamental values: technical excellence, meeting deadlines and commitment to customer satisfaction. Our team of 18 skilled craftsmen perpetuates this tradition of excellence that has built our reputation across Quebec.">
+                        Aujourd'hui, <strong class="text-text-primary">plus de 500 projets</strong> plus tard, nous continuons 
+                        d'innover tout en restant fidèles à nos valeurs fondamentales : excellence technique, respect des délais 
+                        et engagement envers la satisfaction client. Notre équipe de 18 artisans qualifiés perpétue cette tradition 
+                        d'excellence qui fait notre réputation à travers le Québec.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Timeline -->
+    <section class="py-16 lg:py-24 bg-warm-white">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="font-grotesk font-bold text-3xl lg:text-4xl xl:text-5xl mb-6" data-fr="Notre Parcours" data-en="Our Journey">Notre Parcours</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto" data-fr="Trois décennies d'innovation, de croissance et d'excellence en fabrication métallurgique" data-en="Three decades of innovation, growth and excellence in metallurgical fabrication">
+                    Trois décennies d'innovation, de croissance et d'excellence en fabrication métallurgique
+                </p>
+            </div>
+            
+            <div class="timeline relative max-w-4xl mx-auto">
+                <div class="timeline-line" id="timeline-progress"></div>
+                
+                <!-- 1994 -->
+                <div class="timeline-item relative mb-16 lg:mb-20" data-year="1994">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:text-right">
+                            <div class="font-mono text-3xl lg:text-4xl font-bold text-forge-orange mb-4">1994</div>
+                            <h3 class="font-grotesk font-bold text-xl lg:text-2xl mb-4" data-fr="Fondation de JDA METALS" data-en="Foundation of JDA METALS">Fondation de JDA METALS</h3>
+                            <p class="text-text-secondary leading-relaxed" data-fr="Jean-Denis Aubé fonde l'entreprise avec une vision claire : révolutionner la fabrication métallurgique au Québec en alliant expertise artisanale et innovation technique." data-en="Jean-Denis Aubé founds the company with a clear vision: to revolutionize metallurgical fabrication in Quebec by combining artisanal expertise and technical innovation.">
+                                Jean-Denis Aubé fonde l'entreprise avec une vision claire : révolutionner 
+                                la fabrication métallurgique au Québec en alliant expertise artisanale et 
+                                innovation technique.
+                            </p>
+                        </div>
+                        <div class="lg:pl-8">
+                            <div class="w-4 h-4 bg-forge-orange rounded-full absolute left-1/2 transform -translate-x-1/2 z-10 shadow-lg"></div>
+                            <div class="bg-warm-gray p-6 rounded-lg">
+                                <div class="text-sm font-mono text-text-secondary">
+                                    <div>• Atelier initial: 2,000 pi²</div>
+                                    <div>• Équipe fondatrice: 3 personnes</div>
+                                    <div>• Premier contrat: $15,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2001 -->
+                <div class="timeline-item relative mb-16 lg:mb-20" data-year="2001">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:order-2">
+                            <div class="font-mono text-3xl lg:text-4xl font-bold text-forge-orange mb-4">2001</div>
+                            <h3 class="font-grotesk font-bold text-xl lg:text-2xl mb-4" data-fr="Premier Grand Projet" data-en="First Major Project">Premier Grand Projet</h3>
+                            <p class="text-text-secondary leading-relaxed" data-fr="Réalisation d'une charpente métallique de 8,000 pi² pour un centre de distribution à Laval. Ce projet marque notre entrée dans les grands contrats commerciaux." data-en="Completion of an 8,000 sq ft steel frame for a distribution center in Laval. This project marks our entry into major commercial contracts.">
+                                Réalisation d'une charpente métallique de 8,000 pi² pour un centre de 
+                                distribution à Laval. Ce projet marque notre entrée dans les grands 
+                                contrats commerciaux.
+                            </p>
+                        </div>
+                        <div class="lg:order-1 lg:pr-8">
+                            <div class="w-4 h-4 bg-forge-orange rounded-full absolute left-1/2 transform -translate-x-1/2 z-10 shadow-lg"></div>
+                            <div class="bg-warm-gray p-6 rounded-lg lg:text-right">
+                                <div class="text-sm font-mono text-text-secondary">
+                                    <div>• Valeur du contrat: $250,000</div>
+                                    <div>• Durée: 12 semaines</div>
+                                    <div>• Équipe: 8 personnes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2008 -->
+                <div class="timeline-item relative mb-16 lg:mb-20" data-year="2008">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:text-right">
+                            <div class="font-mono text-3xl lg:text-4xl font-bold text-forge-orange mb-4">2008</div>
+                            <h3 class="font-grotesk font-bold text-xl lg:text-2xl mb-4" data-fr="Expansion de l'Atelier" data-en="Workshop Expansion">Expansion de l'Atelier</h3>
+                            <p class="text-text-secondary leading-relaxed" data-fr="Déménagement vers nos installations actuelles de 8,000 pi² à Ste-Marguerite. Acquisition d'équipements de pointe et certification CWB (Canadian Welding Bureau)." data-en="Move to our current 8,000 sq ft facilities in Ste-Marguerite. Acquisition of cutting-edge equipment and CWB (Canadian Welding Bureau) certification.">
+                                Déménagement vers nos installations actuelles de 8,000 pi² à 
+                                Ste-Marguerite. Acquisition d'équipements de pointe et certification 
+                                CWB (Canadian Welding Bureau).
+                            </p>
+                        </div>
+                        <div class="lg:pl-8">
+                            <div class="w-4 h-4 bg-forge-orange rounded-full absolute left-1/2 transform -translate-x-1/2 z-10 shadow-lg"></div>
+                            <div class="bg-warm-gray p-6 rounded-lg">
+                                <div class="text-sm font-mono text-text-secondary">
+                                    <div>• Nouvelle superficie: 8,000 pi²</div>
+                                    <div>• Pont roulant: 10 tonnes</div>
+                                    <div>• Certification CWB obtenue</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2015 -->
+                <div class="timeline-item relative mb-16 lg:mb-20" data-year="2015">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:order-2">
+                            <div class="font-mono text-3xl lg:text-4xl font-bold text-forge-orange mb-4">2015</div>
+                            <h3 class="font-grotesk font-bold text-xl lg:text-2xl mb-4" data-fr="Transition Générationnelle" data-en="Generational Transition">Transition Générationnelle</h3>
+                            <p class="text-text-secondary leading-relaxed" data-fr="Alexandre Aubé, fils du fondateur, rejoint officiellement l'entreprise après ses études en génie mécanique. Modernisation des processus et intégration de technologies CAD/CAM." data-en="Alexandre Aubé, the founder's son, officially joins the company after his mechanical engineering studies. Process modernization and integration of CAD/CAM technologies.">
+                                Alexandre Aubé, fils du fondateur, rejoint officiellement l'entreprise 
+                                après ses études en génie mécanique. Modernisation des processus et 
+                                intégration de technologies CAD/CAM.
+                            </p>
+                        </div>
+                        <div class="lg:order-1 lg:pr-8">
+                            <div class="w-4 h-4 bg-forge-orange rounded-full absolute left-1/2 transform -translate-x-1/2 z-10 shadow-lg"></div>
+                            <div class="bg-warm-gray p-6 rounded-lg lg:text-right">
+                                <div class="text-sm font-mono text-text-secondary">
+                                    <div>• Système CAD/CAM intégré</div>
+                                    <div>• Formation équipe: 120h</div>
+                                    <div>• Productivité: +35%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2020 -->
+                <div class="timeline-item relative mb-16 lg:mb-20" data-year="2020">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:text-right">
+                            <div class="font-mono text-3xl lg:text-4xl font-bold text-forge-orange mb-4">2020</div>
+                            <h3 class="font-grotesk font-bold text-xl lg:text-2xl mb-4" data-fr="Adaptation & Résilience" data-en="Adaptation & Resilience">Adaptation & Résilience</h3>
+                            <p class="text-text-secondary leading-relaxed" data-fr="Malgré la pandémie, JDA METALS maintient ses activités comme service essentiel. Mise en place de protocoles sanitaires stricts et poursuite des grands projets d'infrastructure." data-en="Despite the pandemic, JDA METALS maintains its activities as an essential service. Implementation of strict sanitary protocols and continuation of major infrastructure projects.">
+                                Malgré la pandémie, JDA METALS maintient ses activités comme service 
+                                essentiel. Mise en place de protocoles sanitaires stricts et poursuite 
+                                des grands projets d'infrastructure.
+                            </p>
+                        </div>
+                        <div class="lg:pl-8">
+                            <div class="w-4 h-4 bg-forge-orange rounded-full absolute left-1/2 transform -translate-x-1/2 z-10 shadow-lg"></div>
+                            <div class="bg-warm-gray p-6 rounded-lg">
+                                <div class="text-sm font-mono text-text-secondary">
+                                    <div>• 0 jour d'arrêt de production</div>
+                                    <div>• Protocoles CNESST respectés</div>
+                                    <div>• Projets livrés à temps: 100%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2024 -->
+                <div class="timeline-item relative" data-year="2024">
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div class="lg:order-2">
+                            <div class="font-mono text-3xl lg:text-4xl font-bold text-forge-orange mb-4">2024</div>
+                            <h3 class="font-grotesk font-bold text-xl lg:text-2xl mb-4" data-fr="Excellence Continue" data-en="Continuous Excellence">Excellence Continue</h3>
+                            <p class="text-text-secondary leading-relaxed" data-fr="Aujourd'hui, JDA METALS compte 18 employés spécialisés et maintient sa position de leader en fabrication métallurgique au Québec. Plus de 500 projets réalisés avec succès." data-en="Today, JDA METALS has 18 specialized employees and maintains its position as a leader in metallurgical fabrication in Quebec. Over 500 projects successfully completed.">
+                                Aujourd'hui, JDA METALS compte 18 employés spécialisés et maintient 
+                                sa position de leader en fabrication métallurgique au Québec. 
+                                Plus de 500 projets réalisés avec succès.
+                            </p>
+                        </div>
+                        <div class="lg:order-1 lg:pr-8">
+                            <div class="w-4 h-4 bg-forge-orange rounded-full absolute left-1/2 transform -translate-x-1/2 z-10 shadow-lg"></div>
+                            <div class="bg-warm-gray p-6 rounded-lg lg:text-right">
+                                <div class="text-sm font-mono text-text-secondary">
+                                    <div>• 500+ projets complétés</div>
+                                    <div>• Équipe: 18 spécialistes</div>
+                                    <div>• Satisfaction client: 100%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Values Section -->
+    <section class="py-16 lg:py-24 bg-warm-gray">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="font-grotesk font-bold text-3xl lg:text-4xl xl:text-5xl mb-6" data-fr="Nos Valeurs" data-en="Our Values">Nos Valeurs</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto" data-fr="Les principes qui guident chacune de nos actions et décisions depuis 30 ans" data-en="The principles that have guided our every action and decision for 30 years">
+                    Les principes qui guident chacune de nos actions et décisions depuis 30 ans
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Excellence -->
+                <div class="value-card p-8 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-forge-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-grotesk font-bold text-xl mb-4" data-fr="Excellence" data-en="Excellence">Excellence</h3>
+                    <p class="text-text-secondary leading-relaxed" data-fr="Nous visons l'excellence dans chaque soudure, chaque assemblage, chaque projet. Notre réputation se bâtit sur la qualité irréprochable de nos réalisations." data-en="We strive for excellence in every weld, every assembly, every project. Our reputation is built on the impeccable quality of our work.">
+                        Nous visons l'excellence dans chaque soudure, chaque assemblage, chaque projet. 
+                        Notre réputation se bâtit sur la qualité irréprochable de nos réalisations.
+                    </p>
+                </div>
+                
+                <!-- Innovation -->
+                <div class="value-card p-8 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-forge-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-grotesk font-bold text-xl mb-4" data-fr="Innovation" data-en="Innovation">Innovation</h3>
+                    <p class="text-text-secondary leading-relaxed" data-fr="Nous intégrons continuellement les nouvelles technologies et méthodes pour offrir des solutions toujours plus efficaces et durables." data-en="We continuously integrate new technologies and methods to provide increasingly efficient and sustainable solutions.">
+                        Nous intégrons continuellement les nouvelles technologies et méthodes pour 
+                        offrir des solutions toujours plus efficaces et durables.
+                    </p>
+                </div>
+                
+                <!-- Fiabilité -->
+                <div class="value-card p-8 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-forge-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-grotesk font-bold text-xl mb-4" data-fr="Fiabilité" data-en="Reliability">Fiabilité</h3>
+                    <p class="text-text-secondary leading-relaxed" data-fr="Délais respectés, engagements tenus, qualité constante. Notre fiabilité fait de nous le partenaire privilégié de nos clients depuis trois décennies." data-en="Deadlines met, commitments kept, consistent quality. Our reliability has made us the preferred partner of our clients for three decades.">
+                        Délais respectés, engagements tenus, qualité constante. Notre fiabilité 
+                        fait de nous le partenaire privilégié de nos clients depuis trois décennies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Equipment & Capabilities -->
+    <section class="py-16 lg:py-24 bg-warm-white">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="font-grotesk font-bold text-3xl lg:text-4xl xl:text-5xl mb-6" data-fr="Notre Équipement" data-en="Our Equipment">Notre Équipement</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto" data-fr="Un atelier moderne équipé des technologies les plus avancées pour répondre à tous vos besoins" data-en="A modern workshop equipped with the most advanced technologies to meet all your needs">
+                    Un atelier moderne équipé des technologies les plus avancées pour répondre à tous vos besoins
+                </p>
+            </div>
+            
+            <div class="equipment-grid mb-16">
+                <div class="bg-warm-gray p-6 rounded-lg">
+                    <h3 class="font-grotesk font-bold text-lg mb-3" data-fr="Pont Roulant" data-en="Overhead Crane">Pont Roulant</h3>
+                    <div class="font-mono text-sm space-y-1 text-text-secondary">
+                        <div><span class="text-text-primary" data-fr="Capacité:" data-en="Capacity:">Capacité:</span> <span data-fr="10 tonnes" data-en="10 tons">10 tonnes</span></div>
+                        <div><span class="text-text-primary" data-fr="Portée:" data-en="Span:">Portée:</span> <span data-fr="40 pieds" data-en="40 feet">40 pieds</span></div>
+                        <div><span class="text-text-primary" data-fr="Usage:" data-en="Use:">Usage:</span> <span data-fr="Manutention lourde" data-en="Heavy handling">Manutention lourde</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-warm-gray p-6 rounded-lg">
+                    <h3 class="font-grotesk font-bold text-lg mb-3" data-fr="Oxycoupage CNC" data-en="CNC Oxy-Cutting">Oxycoupage CNC</h3>
+                    <div class="font-mono text-sm space-y-1 text-text-secondary">
+                        <div><span class="text-text-primary" data-fr="Table:" data-en="Table:">Table:</span> 12' x 25'</div>
+                        <div><span class="text-text-primary" data-fr="Épaisseur max:" data-en="Max thickness:">Épaisseur max:</span> <span data-fr="6 pouces" data-en="6 inches">6 pouces</span></div>
+                        <div><span class="text-text-primary" data-fr="Précision:" data-en="Precision:">Précision:</span> ±0.5mm</div>
+                    </div>
+                </div>
+                
+                <div class="bg-warm-gray p-6 rounded-lg">
+                    <h3 class="font-grotesk font-bold text-lg mb-3" data-fr="Postes de Soudage" data-en="Welding Stations">Postes de Soudage</h3>
+                    <div class="font-mono text-sm space-y-1 text-text-secondary">
+                        <div><span class="text-text-primary">TIG:</span> <span data-fr="500A DC/AC" data-en="500A DC/AC">500A DC/AC</span></div>
+                        <div><span class="text-text-primary">MIG:</span> <span data-fr="450A synergique" data-en="450A synergic">450A synergique</span></div>
+                        <div><span class="text-text-primary" data-fr="Arc:" data-en="Stick:">Arc:</span> <span data-fr="600A industriel" data-en="600A industrial">600A industriel</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-warm-gray p-6 rounded-lg">
+                    <h3 class="font-grotesk font-bold text-lg mb-3" data-fr="Presse Plieuse" data-en="Press Brake">Presse Plieuse</h3>
+                    <div class="font-mono text-sm space-y-1 text-text-secondary">
+                        <div><span class="text-text-primary" data-fr="Force:" data-en="Force:">Force:</span> <span data-fr="220 tonnes" data-en="220 tons">220 tonnes</span></div>
+                        <div><span class="text-text-primary" data-fr="Longueur:" data-en="Length:">Longueur:</span> <span data-fr="12 pieds" data-en="12 feet">12 pieds</span></div>
+                        <div><span class="text-text-primary" data-fr="Épaisseur max:" data-en="Max thickness:">Épaisseur max:</span> <span data-fr="1/2 pouce" data-en="1/2 inch">1/2 pouce</span></div>
+                    </div>
+                </div>
+                
+                <div class="bg-warm-gray p-6 rounded-lg">
+                    <h3 class="font-grotesk font-bold text-lg mb-3" data-fr="Perceuse Radiale" data-en="Radial Drill">Perceuse Radiale</h3>
+                    <div class="font-mono text-sm space-y-1 text-text-secondary">
+                        <div><span class="text-text-primary" data-fr="Capacité:" data-en="Capacity:">Capacité:</span> <span data-fr="3 pouces" data-en="3 inches">3 pouces</span></div>
+                        <div><span class="text-text-primary" data-fr="Bras:" data-en="Arm:">Bras:</span> <span data-fr="8 pieds" data-en="8 feet">8 pieds</span></div>
+                        <div><span class="text-text-primary" data-fr="Précision:" data-en="Precision:">Précision:</span> ±0.1mm</div>
+                    </div>
+                </div>
+                
+                <div class="bg-warm-gray p-6 rounded-lg">
+                    <h3 class="font-grotesk font-bold text-lg mb-3" data-fr="Système CAD/CAM" data-en="CAD/CAM System">Système CAD/CAM</h3>
+                    <div class="font-mono text-sm space-y-1 text-text-secondary">
+                        <div><span class="text-text-primary" data-fr="Logiciel:" data-en="Software:">Logiciel:</span> Tekla Structures</div>
+                        <div><span class="text-text-primary">3D:</span> <span data-fr="Modélisation complète" data-en="Complete modeling">Modélisation complète</span></div>
+                        <div><span class="text-text-primary">CNC:</span> <span data-fr="Programmation directe" data-en="Direct programming">Programmation directe</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Workshop Photo with Parallax -->
+            <div class="relative h-64 lg:h-96 rounded-lg overflow-hidden">
+                <img src="photo-2381463.jpg" alt="Atelier JDA METALS" class="w-full h-full object-cover" id="workshop-image" loading="lazy">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                    <div class="text-center text-white">
+                        <h3 class="font-grotesk font-bold text-2xl lg:text-3xl mb-2" data-fr="8,000 pi² d'Excellence" data-en="8,000 sq ft of Excellence">8,000 pi² d'Excellence</h3>
+                        <p class="text-lg opacity-90" data-fr="Notre atelier moderne à Ste-Marguerite" data-en="Our modern workshop in Ste-Marguerite">Notre atelier moderne à Ste-Marguerite</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="bg-dark-charcoal text-white py-16 lg:py-20">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="font-grotesk font-bold text-3xl lg:text-4xl mb-6" data-fr="Prêt à Collaborer?" data-en="Ready to Collaborate?">Prêt à Collaborer?</h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto" data-fr="Découvrez pourquoi plus de 500 clients nous font confiance pour leurs projets métallurgiques. Votre succès commence par une conversation." data-en="Discover why over 500 clients trust us for their metallurgical projects. Your success begins with a conversation.">
+                Découvrez pourquoi plus de 500 clients nous font confiance pour leurs projets métallurgiques. 
+                Votre succès commence par une conversation.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="contact.html" class="magnetic bg-forge-orange text-white px-8 py-4 rounded-lg font-medium hover:bg-opacity-90 transition-all duration-300" data-fr="Planifier une visite d'atelier" data-en="Schedule a workshop visit">
+                    Planifier une visite d'atelier
+                </a>
+                <a href="devis.html" class="magnetic border border-gray-400 text-gray-300 hover:text-white hover:border-white px-8 py-4 rounded-lg font-medium transition-all duration-300" data-fr="Demander une soumission" data-en="Request a quote">
+                    Demander une soumission
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark-charcoal text-white border-t-2 border-forge-orange">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="lg:col-span-1">
+                    <img src="jda_logo_transparent.png" alt="JDA METALS" class="h-16 w-auto mb-4 filter invert">
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4" data-fr="Expert en fabrication métallurgique au Québec depuis 30 ans. Votre partenaire de confiance pour tous vos projets d'acier structural." data-en="Metal fabrication expert in Quebec for 30 years. Your trusted partner for all your structural steel projects.">
+                        Expert en fabrication métallurgique au Québec depuis 30 ans. Votre partenaire de confiance pour tous vos projets d'acier structural.
+                    </p>
+                    <p class="text-xs text-gray-400" data-fr="Licence RBQ: 5678-1234-01" data-en="RBQ License: 5678-1234-01">
+                        Licence RBQ: 5678-1234-01
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-grotesk font-bold text-lg mb-4" data-fr="Services" data-en="Services">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Acier Structural" data-en="Structural Steel">Acier Structural</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Soudure Spécialisée" data-en="Specialized Welding">Soudure Spécialisée</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Escaliers & Garde-Corps" data-en="Stairs & Railings">Escaliers & Garde-Corps</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Installation" data-en="Installation">Installation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-grotesk font-bold text-lg mb-4" data-fr="Navigation" data-en="Navigation">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Services" data-en="Services">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Réalisations" data-en="Portfolio">Réalisations</a></li>
+                        <li><a href="secteurs.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Secteurs" data-en="Markets">Secteurs</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Contact" data-en="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-grotesk font-bold text-lg mb-4" data-fr="Contact" data-en="Contact">Contact</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-4 h-4 mt-0.5 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <div>
+                                <p class="text-gray-300">91 Rue Du Joli-Bucheron</p>
+                                <p class="text-gray-300">Ste-Marguerite, QC J0K 2X0</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-4 h-4 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <a href="tel:(450) 226-3838" class="text-gray-300 hover:text-forge-orange transition-colors font-mono">(450) 226-3838</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-4 h-4 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <a href="mailto:info@jdametals.com" class="text-gray-300 hover:text-forge-orange transition-colors">info@jdametals.com</a>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-xs text-gray-400 mb-2" data-fr="Heures d'ouverture:" data-en="Opening hours:">Heures d'ouverture:</p>
+                            <p class="text-sm text-gray-300" data-fr="Lun-Ven: 7h00 - 17h00" data-en="Mon-Fri: 7:00 AM - 5:00 PM">Lun-Ven: 7h00 - 17h00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-sm text-gray-400 mb-4 md:mb-0" data-fr="© 2026 JDA METALS INC. Tous droits réservés." data-en="© 2026 JDA METALS INC. All rights reserved.">
+                        © 2026 JDA METALS INC. Tous droits réservés.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="/confidentialite" class="text-gray-400 hover:text-forge-orange transition-colors" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+                        <a href="/conditions" class="text-gray-400 hover:text-forge-orange transition-colors" data-fr="Conditions" data-en="Terms">Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts (Deferred) -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initializeAnimations, 100);
+        });
+        
+        function initializeAnimations() {
+            if (typeof gsap === 'undefined') {
+                setTimeout(initializeAnimations, 100);
+                return;
+            }
+            
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Native smooth scrolling is handled by CSS scroll-behavior: smooth
+            
+            // Navigation blur
+            ScrollTrigger.create({
+                start: "top -80",
+                end: 99999,
+                toggleClass: {className: "nav-blur", targets: "#main-nav"}
+            });
+            
+            // Logo shrink
+            gsap.to('#nav-logo', {
+                height: 48,
+                ease: "none",
+                scrollTrigger: { trigger: "body", start: "top top", end: "200px top", scrub: true }
+            });
+            
+            // Story paragraphs animation
+            gsap.utils.toArray('.story-paragraph').forEach((el, i) => {
+                gsap.to(el, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    delay: i * 0.2,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%"
+                    }
+                });
+            });
+            
+            // Timeline animation
+            ScrollTrigger.create({
+                trigger: '.timeline',
+                start: "top 60%",
+                end: "bottom 40%",
+                onUpdate: self => {
+                    const progress = self.progress;
+                    document.getElementById('timeline-progress').style.height = `${progress * 100}%`;
+                }
+            });
+            
+            // Timeline items animation
+            gsap.utils.toArray('.timeline-item').forEach((el, i) => {
+                gsap.to(el, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%"
+                    }
+                });
+            });
+            
+            // Value cards hover animation
+            gsap.utils.toArray('.value-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
+                });
+            });
+            
+            // Workshop image parallax
+            gsap.to('#workshop-image', {
+                yPercent: -30,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: '#workshop-image',
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+            
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('translate-x-full');
+            });
+            
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+            
+            // Magnetic effect
+            document.querySelectorAll('.magnetic').forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = '';
+                });
+            });
+        }
+    
+                // FR/EN Translation System
+        let currentLang = localStorage.getItem('jda-lang') || 'fr';
+        function applyLanguage() {
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.textContent = currentLang === 'fr' ? el.dataset.fr : el.dataset.en;
+            });
+            document.querySelectorAll('[data-placeholder-fr][data-placeholder-en]').forEach(el => {
+                el.placeholder = currentLang === 'fr' ? el.dataset.placeholderFr : el.dataset.placeholderEn;
+            });
+            document.documentElement.lang = currentLang;
+            const btn = document.getElementById('lang-toggle-btn');
+            if (btn) btn.textContent = currentLang === 'fr' ? 'EN' : 'FR';
+            const frLabel = document.getElementById('lang-fr-label');
+            if (frLabel) frLabel.textContent = currentLang === 'fr' ? 'FR' : 'EN';
+        }
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('jda-lang', currentLang);
+            applyLanguage();
+        }
+        document.addEventListener('DOMContentLoaded', applyLanguage);
+
+</script>
+</body>
+</html>

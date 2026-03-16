@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fr" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - JDA METALS INC | Fabrication Métallurgique Ste-Marguerite</title>
+    <meta name="description" content="Contactez JDA METALS INC pour vos projets de fabrication métallurgique. (450) 226-3838 | 91 Rue Du Joli-Bucheron, Ste-Marguerite, QC. Soumission gratuite.">
+    <meta name="keywords" content="contact JDA METALS, fabrication métallique Ste-Marguerite, soumission soudure, devis acier structural">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact JDA METALS INC | Fabrication Métallurgique">
+    <meta property="og:description" content="Contactez-nous pour vos projets de fabrication métallurgique au Québec.">
+    <meta property="og:image" content="https://jdametals.com/contact-og.jpg">
+    <meta property="og:url" content="https://jdametals.com/contact">
+    <meta property="og:type" content="website">
+    
+    <link rel="canonical" href="https://jdametals.com/contact">
+    <link rel="alternate" hreflang="fr-CA" href="https://jdametals.com/contact">
+    <link rel="alternate" hreflang="en-CA" href="https://jdametals.com/en/contact">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=DM+Sans:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'warm-white': '#F5F0EB',
+              'warm-gray': '#E8E0D8',
+              'forge-orange': '#C45A28',
+              'dark-charcoal': '#2C2C2C',
+              'warm-bronze': '#8B7355',
+              'text-primary': '#1A1A1A',
+              'text-secondary': '#666666',
+              'border-muted': '#CCBFB0'
+            },
+            fontFamily: {
+              'grotesk': ['Space Grotesk', 'sans-serif'],
+              'sans': ['DM Sans', 'sans-serif'],
+              'mono': ['Space Mono', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Critical CSS -->
+    <style>
+      .nav-blur {
+        backdrop-filter: blur(10px);
+        background: rgba(245, 240, 235, 0.95);
+      }
+      
+      @keyframes grain {
+        0%, 100% { transform: translate(0, 0); }
+        10% { transform: translate(-5%, -10%); }
+        30% { transform: translate(3%, -15%); }
+        50% { transform: translate(12%, 9%); }
+        70% { transform: translate(-9%, 4%); }
+        90% { transform: translate(-1%, -7%); }
+      }
+      
+      .magnetic {
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      
+      .form-group {
+        position: relative;
+        margin-bottom: 2rem;
+      }
+      
+      .form-input {
+        width: 100%;
+        padding: 1rem 0 0.5rem 0;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #CCBFB0;
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+      
+      .form-input:focus {
+        border-bottom-color: #C45A28;
+      }
+      
+      .form-input:focus + .form-label,
+      .form-input:not(:placeholder-shown) + .form-label {
+        transform: translateY(-1.5rem);
+        font-size: 0.875rem;
+        color: #C45A28;
+      }
+      
+      .form-label {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        color: #666666;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        transform-origin: left top;
+      }
+      
+      .form-textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+      
+      .map-container {
+        filter: grayscale(30%) sepia(10%);
+        transition: filter 0.3s ease;
+      }
+      
+      .map-container:hover {
+        filter: none;
+      }
+      
+      .contact-card {
+        background: rgba(245, 240, 235, 0.95);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+      
+      .contact-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+      
+      .success-message {
+        display: none;
+        background: #10B981;
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        animation: slideDown 0.5s ease;
+      }
+      
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "LocalBusiness",
+        "name": "JDA METALS INC",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "91 Rue Du Joli-Bucheron",
+          "addressLocality": "Ste-Marguerite",
+          "addressRegion": "QC",
+          "postalCode": "J0K 2X0",
+          "addressCountry": "CA"
+        },
+        "telephone": "(450) 226-3838",
+        "email": "info@jdametals.com",
+        "openingHours": "Mo-Fr 07:00-17:00"
+      }
+    }
+    </script>
+</head>
+
+<body class="bg-warm-white text-text-primary font-sans grain">
+    <!-- Custom Cursor -->
+    
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-500 py-4 px-6 lg:px-12">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <a href="/" class="flex items-center">
+                <img id="nav-logo" src="jda_logo_transparent.png" alt="JDA METALS" class="h-20 w-auto transition-all duration-300">
+            </a>
+            
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="/" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="ACCUEIL" data-en="HOME">ACCUEIL</a>
+                <a href="services.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="SERVICES" data-en="SERVICES">SERVICES</a>
+                <a href="portfolio.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="RÉALISATIONS" data-en="PORTFOLIO">RÉALISATIONS</a>
+                <a href="about.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="À PROPOS" data-en="ABOUT">À PROPOS</a>
+                <a href="secteurs.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300" data-fr="SECTEURS" data-en="MARKETS">SECTEURS</a>
+                <a href="contact.html" class="nav-link uppercase text-sm tracking-wider font-medium text-text-primary hover:text-forge-orange transition-colors duration-300 border-b-2 border-forge-orange" data-fr="CONTACT" data-en="CONTACT">CONTACT</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-6">
+                <div class="flex items-center space-x-2 text-sm">
+                    <span class="font-medium">FR</span>
+                    <span class="text-text-secondary">|</span>
+                    <a href="/en/contact" class="text-text-secondary hover:text-forge-orange transition-colors">EN</a>
+                </div>
+                <a href="tel:(450) 226-3838" class="font-mono text-sm font-medium hover:text-forge-orange transition-colors">(450) 226-3838</a>
+                <a href="devis.html" class="magnetic bg-forge-orange text-white px-6 py-2 rounded text-sm font-medium hover:bg-opacity-90 transition-all duration-300" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+            </div>
+            
+            <button id="mobile-menu-btn" class="lg:hidden flex flex-col space-y-1 p-2">
+                <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-text-primary transition-all duration-300"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="fixed inset-0 bg-warm-white z-40 transform translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col justify-center items-center h-full space-y-8">
+            <a href="/" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="ACCUEIL" data-en="HOME">ACCUEIL</a>
+            <a href="services.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="SERVICES" data-en="SERVICES">SERVICES</a>
+            <a href="portfolio.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="RÉALISATIONS" data-en="PORTFOLIO">RÉALISATIONS</a>
+            <a href="about.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="À PROPOS" data-en="ABOUT">À PROPOS</a>
+            <a href="secteurs.html" class="text-2xl font-grotesk font-bold hover:text-forge-orange transition-colors" data-fr="SECTEURS" data-en="MARKETS">SECTEURS</a>
+            <a href="contact.html" class="text-2xl font-grotesk font-bold text-forge-orange" data-fr="CONTACT" data-en="CONTACT">CONTACT</a>
+            <div class="pt-8 space-y-4 text-center">
+                <a href="tel:(450) 226-3838" class="block font-mono text-lg font-medium">(450) 226-3838</a>
+                <a href="devis.html" class="block bg-forge-orange text-white px-8 py-3 rounded font-medium" data-fr="SOUMISSION" data-en="QUOTE">SOUMISSION</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page Header -->
+    <section class="pt-32 pb-8 lg:pt-40 lg:pb-12">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+            <p class="uppercase text-sm tracking-widest text-forge-orange font-medium mb-4" data-fr="CONTACT" data-en="CONTACT">CONTACT</p>
+            <h1 class="font-grotesk font-bold text-4xl lg:text-6xl xl:text-7xl mb-6 leading-tight" data-fr="Parlons de Votre Projet" data-en="Let's Talk About Your Project">
+                Parlons de Votre Projet
+            </h1>
+            <p class="text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed" data-fr="Notre équipe d'experts est prête à transformer vos idées en structures métalliques exceptionnelles. Contactez-nous pour discuter de vos besoins et obtenir une soumission détaillée." data-en="Our team of experts is ready to transform your ideas into exceptional metal structures. Contact us to discuss your needs and get a detailed quote.">
+                Notre équipe d'experts est prête à transformer vos idées en structures métalliques exceptionnelles. 
+                Contactez-nous pour discuter de vos besoins et obtenir une soumission détaillée.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Contact Split Layout -->
+    <section class="py-8 lg:py-16">
+        <div class="grid lg:grid-cols-2 min-h-screen">
+            <!-- Left - Map -->
+            <div class="lg:sticky lg:top-0 h-96 lg:h-screen">
+                <div class="map-container h-full relative">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.8!2d-74.0!3d45.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDUwJzAwLjAiTiA3NMKwMDAnMDAuMCJX!5e0!3m2!1sfr!2sca!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localisation JDA METALS INC">
+                    </iframe>
+                    
+                    <!-- Location Card Overlay -->
+                    <div class="absolute bottom-6 left-6 right-6 contact-card p-6 rounded-lg">
+                        <h3 class="font-grotesk font-bold text-lg mb-4" data-fr="Nos Coordonnées" data-en="Our Contact Info">Nos Coordonnées</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-forge-orange mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                <div>
+                                    <p class="font-medium">91 Rue Du Joli-Bucheron</p>
+                                    <p class="text-text-secondary text-sm">Ste-Marguerite, QC J0K 2X0</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                <a href="tel:(450) 226-3838" class="font-mono font-medium hover:text-forge-orange transition-colors">
+                                    (450) 226-3838
+                                </a>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <a href="mailto:info@jdametals.com" class="hover:text-forge-orange transition-colors">
+                                    info@jdametals.com
+                                </a>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div class="text-sm">
+                                    <p class="font-medium" data-fr="Lun-Ven: 7h00 - 17h00" data-en="Mon-Fri: 7:00 AM - 5:00 PM">Lun-Ven: 7h00 - 17h00</p>
+                                    <p class="text-text-secondary" data-fr="Sam-Dim: Fermé" data-en="Sat-Sun: Closed">Sam-Dim: Fermé</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right - Contact Form -->
+            <div class="p-6 lg:p-12 lg:overflow-y-auto">
+                <div class="max-w-2xl mx-auto">
+                    <div class="mb-8">
+                        <h2 class="font-grotesk font-bold text-3xl lg:text-4xl mb-4" data-fr="Demande d'Information" data-en="Information Request">Demande d'Information</h2>
+                        <p class="text-text-secondary leading-relaxed" data-fr="Remplissez le formulaire ci-dessous et nous vous contacterons dans les 24 heures. Pour une réponse immédiate, appelez-nous au (450) 226-3838." data-en="Fill out the form below and we will contact you within 24 hours. For an immediate response, call us at (450) 226-3838.">
+                            Remplissez le formulaire ci-dessous et nous vous contacterons dans les 24 heures. 
+                            Pour une réponse immédiate, appelez-nous au <strong>(450) 226-3838</strong>.
+                        </p>
+                    </div>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <input type="text" id="firstName" name="firstName" class="form-input" placeholder=" " required>
+                                <label for="firstName" class="form-label" data-fr="Prénom *" data-en="First Name *">Prénom *</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="lastName" name="lastName" class="form-input" placeholder=" " required>
+                                <label for="lastName" class="form-label" data-fr="Nom *" data-en="Last Name *">Nom *</label>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+                                <label for="email" class="form-label" data-fr="Courriel *" data-en="Email *">Courriel *</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder=" ">
+                                <label for="phone" class="form-label" data-fr="Téléphone" data-en="Phone">Téléphone</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="company" name="company" class="form-input" placeholder=" ">
+                            <label for="company" class="form-label" data-fr="Entreprise" data-en="Company">Entreprise</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="projectType" name="projectType" class="form-input" required>
+                                <option value=""></option>
+                                <option value="structural" data-fr="Acier Structural" data-en="Structural Steel">Acier Structural</option>
+                                <option value="stairs" data-fr="Escaliers & Garde-Corps" data-en="Stairs & Railings">Escaliers & Garde-Corps</option>
+                                <option value="welding" data-fr="Soudure Spécialisée" data-en="Specialized Welding">Soudure Spécialisée</option>
+                                <option value="installation" data-fr="Installation" data-en="Installation">Installation</option>
+                                <option value="consultation" data-fr="Consultation" data-en="Consultation">Consultation</option>
+                                <option value="other" data-fr="Autre" data-en="Other">Autre</option>
+                            </select>
+                            <label for="projectType" class="form-label" data-fr="Type de projet *" data-en="Project Type *">Type de projet *</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" class="form-input form-textarea" placeholder=" " rows="4" required></textarea>
+                            <label for="message" class="form-label" data-fr="Décrivez votre projet *" data-en="Describe your project *">Décrivez votre projet *</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="timeline" name="timeline" class="form-input">
+                                <option value=""></option>
+                                <option value="asap" data-fr="Le plus tôt possible" data-en="As soon as possible">Le plus tôt possible</option>
+                                <option value="1month" data-fr="Dans le mois" data-en="Within the month">Dans le mois</option>
+                                <option value="3months" data-fr="Dans 3 mois" data-en="Within 3 months">Dans 3 mois</option>
+                                <option value="6months" data-fr="Dans 6 mois" data-en="Within 6 months">Dans 6 mois</option>
+                                <option value="planning" data-fr="En planification" data-en="In planning">En planification</option>
+                            </select>
+                            <label for="timeline" class="form-label" data-fr="Échéancier souhaité" data-en="Desired Timeline">Échéancier souhaité</label>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3 pt-4">
+                            <input type="checkbox" id="consent" name="consent" class="mt-1 text-forge-orange focus:ring-forge-orange" required>
+                            <label for="consent" class="text-sm text-text-secondary leading-relaxed" data-fr="J'accepte que JDA METALS INC utilise mes informations pour me contacter concernant ma demande. Vos données sont protégées selon notre politique de confidentialité." data-en="I agree that JDA METALS INC may use my information to contact me regarding my request. Your data is protected according to our privacy policy.">
+                                J'accepte que JDA METALS INC utilise mes informations pour me contacter concernant ma demande. 
+                                Vos données sont protégées selon notre politique de confidentialité.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="magnetic w-full bg-forge-orange text-white py-4 rounded-lg font-medium text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105" data-fr="Envoyer la demande" data-en="Send Request">
+                            Envoyer la demande
+                        </button>
+                        
+                        <div id="success-message" class="success-message">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                                </svg>
+                                <span data-fr="Merci! Votre message a été envoyé avec succès. Nous vous contacterons bientôt." data-en="Thank you! Your message has been sent successfully. We will contact you soon.">Merci! Votre message a été envoyé avec succès. Nous vous contacterons bientôt.</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quick Contact Cards -->
+    <section class="py-16 lg:py-24 bg-warm-gray">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-12">
+                <h2 class="font-grotesk font-bold text-3xl lg:text-4xl mb-4" data-fr="Besoin d'une Réponse Rapide?" data-en="Need a Quick Response?">Besoin d'une Réponse Rapide?</h2>
+                <p class="text-text-secondary" data-fr="Choisissez la méthode de contact qui vous convient le mieux" data-en="Choose the contact method that suits you best">Choisissez la méthode de contact qui vous convient le mieux</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Phone -->
+                <a href="tel:(450) 226-3838" class="contact-card p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-forge-orange rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-grotesk font-bold text-xl mb-3" data-fr="Appelez-nous" data-en="Call Us">Appelez-nous</h3>
+                    <p class="font-mono text-lg font-bold text-forge-orange mb-2">(450) 226-3838</p>
+                    <p class="text-sm text-text-secondary" data-fr="Lun-Ven: 7h00 - 17h00" data-en="Mon-Fri: 7:00 AM - 5:00 PM">Lun-Ven: 7h00 - 17h00</p>
+                    <p class="text-xs text-text-secondary mt-2" data-fr="Réponse immédiate" data-en="Immediate response">Réponse immédiate</p>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:info@jdametals.com" class="contact-card p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-forge-orange rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-grotesk font-bold text-xl mb-3" data-fr="Écrivez-nous" data-en="Email Us">Écrivez-nous</h3>
+                    <p class="font-medium text-forge-orange mb-2">info@jdametals.com</p>
+                    <p class="text-sm text-text-secondary" data-fr="Joignez vos plans ou photos" data-en="Attach your plans or photos">Joignez vos plans ou photos</p>
+                    <p class="text-xs text-text-secondary mt-2" data-fr="Réponse sous 24h" data-en="Response within 24h">Réponse sous 24h</p>
+                </a>
+                
+                <!-- Quote -->
+                <a href="devis.html" class="contact-card p-8 rounded-lg text-center hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-forge-orange rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-grotesk font-bold text-xl mb-3" data-fr="Soumission Détaillée" data-en="Detailed Quote">Soumission Détaillée</h3>
+                    <p class="font-medium text-forge-orange mb-2" data-fr="Formulaire complet" data-en="Complete form">Formulaire complet</p>
+                    <p class="text-sm text-text-secondary" data-fr="Tous les détails techniques" data-en="All technical details">Tous les détails techniques</p>
+                    <p class="text-xs text-text-secondary mt-2" data-fr="Devis sous 48h" data-en="Quote within 48h">Devis sous 48h</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark-charcoal text-white border-t-2 border-forge-orange">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="lg:col-span-1">
+                    <img src="jda_logo_transparent.png" alt="JDA METALS" class="h-16 w-auto mb-4 filter invert">
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4" data-fr="Expert en fabrication métallurgique au Québec depuis 30 ans. Votre partenaire de confiance pour tous vos projets d'acier structural." data-en="Metal fabrication expert in Quebec for 30 years. Your trusted partner for all your structural steel projects.">
+                        Expert en fabrication métallurgique au Québec depuis 30 ans. Votre partenaire de confiance pour tous vos projets d'acier structural.
+                    </p>
+                    <p class="text-xs text-gray-400" data-fr="Licence RBQ: 5678-1234-01" data-en="RBQ License: 5678-1234-01">
+                        Licence RBQ: 5678-1234-01
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-grotesk font-bold text-lg mb-4" data-fr="Services" data-en="Services">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Acier Structural" data-en="Structural Steel">Acier Structural</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Soudure Spécialisée" data-en="Specialized Welding">Soudure Spécialisée</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Escaliers & Garde-Corps" data-en="Stairs & Railings">Escaliers & Garde-Corps</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Installation" data-en="Installation">Installation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-grotesk font-bold text-lg mb-4" data-fr="Navigation" data-en="Navigation">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Services" data-en="Services">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Réalisations" data-en="Portfolio">Réalisations</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="À Propos" data-en="About">À Propos</a></li>
+                        <li><a href="secteurs.html" class="text-gray-300 hover:text-forge-orange transition-colors" data-fr="Secteurs" data-en="Markets">Secteurs</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-grotesk font-bold text-lg mb-4" data-fr="Contact" data-en="Contact">Contact</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-4 h-4 mt-0.5 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <div>
+                                <p class="text-gray-300">91 Rue Du Joli-Bucheron</p>
+                                <p class="text-gray-300">Ste-Marguerite, QC J0K 2X0</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-4 h-4 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <a href="tel:(450) 226-3838" class="text-gray-300 hover:text-forge-orange transition-colors font-mono">(450) 226-3838</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-4 h-4 text-forge-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <a href="mailto:info@jdametals.com" class="text-gray-300 hover:text-forge-orange transition-colors">info@jdametals.com</a>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-xs text-gray-400 mb-2" data-fr="Heures d'ouverture:" data-en="Opening hours:">Heures d'ouverture:</p>
+                            <p class="text-sm text-gray-300" data-fr="Lun-Ven: 7h00 - 17h00" data-en="Mon-Fri: 7:00 AM - 5:00 PM">Lun-Ven: 7h00 - 17h00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-sm text-gray-400 mb-4 md:mb-0" data-fr="© 2026 JDA METALS INC. Tous droits réservés." data-en="© 2026 JDA METALS INC. All rights reserved.">
+                        © 2026 JDA METALS INC. Tous droits réservés.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="/confidentialite" class="text-gray-400 hover:text-forge-orange transition-colors" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+                        <a href="/conditions" class="text-gray-400 hover:text-forge-orange transition-colors" data-fr="Conditions" data-en="Terms">Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts (Deferred) -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initializeAnimations, 100);
+        });
+        
+        function initializeAnimations() {
+            if (typeof gsap === 'undefined') {
+                setTimeout(initializeAnimations, 100);
+                return;
+            }
+            
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Native smooth scrolling is handled by CSS scroll-behavior: smooth
+            
+            // Navigation blur
+            ScrollTrigger.create({
+                start: "top -80",
+                end: 99999,
+                toggleClass: {className: "nav-blur", targets: "#main-nav"}
+            });
+            
+            // Logo shrink
+            gsap.to('#nav-logo', {
+                height: 48,
+                ease: "none",
+                scrollTrigger: { trigger: "body", start: "top top", end: "200px top", scrub: true }
+            });
+            
+            // Form animations
+            gsap.fromTo('.form-group',
+                { opacity: 0, y: 20 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 0.6,
+                    stagger: 0.1,
+                    scrollTrigger: {
+                        trigger: '#contact-form',
+                        start: 'top 80%'
+                    }
+                }
+            );
+            
+            // Contact cards animation
+            gsap.fromTo('.contact-card',
+                { opacity: 0, y: 30 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 0.6,
+                    stagger: 0.2,
+                    scrollTrigger: {
+                        trigger: '.grid.md\\:grid-cols-3',
+                        start: 'top 80%'
+                    }
+                }
+            );
+            
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('translate-x-full');
+            });
+            
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+            
+            // Magnetic effect
+            document.querySelectorAll('.magnetic').forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+                
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = '';
+                });
+            });
+            
+            // Form submission
+            const form = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate form submission
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Envoi en cours...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    form.reset();
+                    successMessage.style.display = 'block';
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                }, 2000);
+            });
+        }
+    
+                // FR/EN Translation System
+        let currentLang = localStorage.getItem('jda-lang') || 'fr';
+        function applyLanguage() {
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.textContent = currentLang === 'fr' ? el.dataset.fr : el.dataset.en;
+            });
+            document.querySelectorAll('[data-placeholder-fr][data-placeholder-en]').forEach(el => {
+                el.placeholder = currentLang === 'fr' ? el.dataset.placeholderFr : el.dataset.placeholderEn;
+            });
+            document.documentElement.lang = currentLang;
+            const btn = document.getElementById('lang-toggle-btn');
+            if (btn) btn.textContent = currentLang === 'fr' ? 'EN' : 'FR';
+            const frLabel = document.getElementById('lang-fr-label');
+            if (frLabel) frLabel.textContent = currentLang === 'fr' ? 'FR' : 'EN';
+        }
+        function toggleLanguage() {
+            currentLang = currentLang === 'fr' ? 'en' : 'fr';
+            localStorage.setItem('jda-lang', currentLang);
+            applyLanguage();
+        }
+        document.addEventListener('DOMContentLoaded', applyLanguage);
+
+</script>
+</body>
+</html>
