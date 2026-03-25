@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://jdametals.com/sitemap.xml
+Sitemap: https://jdametals.ca/sitemap.xml
 
 # Disallow common admin/system paths
 Disallow: /admin/
